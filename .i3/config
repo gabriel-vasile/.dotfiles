@@ -24,9 +24,8 @@ font pango:System San Francisco Display 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
- 
-
+bindsym $mod+Return exec gnome-terminal -e mc 
+bindsym $mod+Shift+Return exec gnome-terminal 
 
 
 # kill focused window
@@ -80,7 +79,7 @@ bindsym $mod+f fullscreen
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -182,7 +181,7 @@ bar {
 	}
 }
 
-bindsym $mod+l exec ~/.i3/lock.sh
+bindsym $mod+l exec ~/.i3/i3-fancy/lock
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -221,7 +220,7 @@ bindsym Control+Mod1+Left workspace prev
 bindsym Control+Mod1+Right workspace next
 bindsym Control+Mod1+Shift+Left move container to workspace prev
 bindsym Control+Mod1+Shift+Right move container to workspace next
-bindsym $mod+E exec nemo
+bindsym $mod+c exec nemo
 
 exec_always compton -f -D2
 exec_always np-applet
