@@ -222,7 +222,7 @@ bindsym Control+Mod1+Shift+Left move container to workspace prev
 bindsym Control+Mod1+Shift+Right move container to workspace next
 bindsym $mod+c exec nemo
 
-exec_always compton -f -D2
+exec_always compton -f -D2 -i 0.7
 exec_always np-applet
 
 bindsym $mod+Shift+E exec ~/.i3/i3-exit.sh
