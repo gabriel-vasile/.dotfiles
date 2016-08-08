@@ -31,3 +31,7 @@ alias gco='git commit'
 alias gps='git push'
 alias gra='git remote add'
 alias grr='git remote rm'
+alias gpsom='git push origin master'
+alias gplom='git pull orifin master'
+alias grh='git reset --hard'
+
