@@ -35,3 +35,4 @@ alias gpsom='git push origin master'
 alias gplom='git pull orifin master'
 alias grh='git reset --hard'
 
+alias fuck='sudo $(history -p \!\!)'
