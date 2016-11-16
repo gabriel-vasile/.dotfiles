@@ -36,3 +36,13 @@ alias gpullom='git pull orifin master'
 alias grh='git reset --hard'
 
 alias fuck='sudo $(history -p \!\!)'
+
+function gardiff_function() {
+	if [ "$#" -ne 1 ]; then
+		git archive -o update.zip HEAD $(git diff --name-only)
+	else
+    	git archive -o update.zip HEAD $(git diff --name-only HEAD~$1)
+    fi
+}
+
+alias gardiff=gardiff_function
