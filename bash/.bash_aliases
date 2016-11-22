@@ -46,3 +46,7 @@ function gardiff_function() {
 }
 
 alias gardiff=gardiff_function
+
+alias dc='docker-compose'
+alias d='docker'
+alias dm='docker-machine'
