@@ -32,7 +32,7 @@ alias gps='git push'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gpushom='git push origin master'
-alias gpullom='git pull orifin master'
+alias gpullom='git pull origin master'
 alias grh='git reset --hard'
 
 alias fuck='sudo $(history -p \!\!)'
