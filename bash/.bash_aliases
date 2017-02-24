@@ -47,6 +47,11 @@ function gardiff_function() {
 
 alias gardiff=gardiff_function
 
+# if there are any files comitted in the repo that need to be removed from git
+# but kept on disk
+alias apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
+
+
 alias dc='docker-compose'
 alias d='docker'
 alias dm='docker-machine'
