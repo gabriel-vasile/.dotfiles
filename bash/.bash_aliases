@@ -7,14 +7,6 @@ alias l='ls -CF'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# apt-get
-alias apt-update='sudo apt-get update'
-alias apt-upgrade='sudo apt-get upgrade'
-alias apt-dist-upgrade='sudo apt-get dist-upgrade'
-alias apt-install='sudo apt-get install'
-alias apt-clean='sudo apt-get autoremove --purge'
-alias apt-search='sudo apt-cache search'
-
 # git
 alias g='git'
 alias gi='git init'
@@ -31,11 +23,14 @@ alias gco='git commit'
 alias gps='git push'
 alias gra='git remote add'
 alias grr='git remote rm'
+alias gst='git stash'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gstd='git stash drop'
 alias gpushom='git push origin master'
 alias gpullom='git pull origin master'
 alias grh='git reset --hard'
-
-alias fuck='sudo $(history -p \!\!)'
+function glf() { git log --all --grep="$1"; }
 
 function gardiff_function() {
 	if [ "$#" -ne 1 ]; then
@@ -51,6 +46,7 @@ alias gardiff=gardiff_function
 # but kept on disk
 alias apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 
+alias fuck='sudo $(history -p \!\!)'
 
 alias dc='docker-compose'
 alias d='docker'
