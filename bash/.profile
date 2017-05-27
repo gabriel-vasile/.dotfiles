@@ -20,46 +20,42 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-xinput set-prop 15 "Device Enabled" 0
+# xinput set-prop 15 "Device Enabled" 0
 
-export PATH=~/.composer/vendor/bin:$PATH
-export PATH=~/Node/bin:$PATH
-export PATH=~/gradle-2.12/bin:$PATH
 
-# ls
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
-# cd
-alias ..='cd ..'
-alias ...='cd ../..'
-
-# apt-get
-alias apt-update='sudo apt-get update'
-alias apt-upgrade='sudo apt-get upgrade'
-alias apt-dist-upgrade='sudo apt-get dist-upgrade'
-alias apt-install='sudo apt-get install'
-alias apt-clean='sudo apt-get autoremove --purge'
-alias apt-search='sudo apt-cache search'
-
-# vim
-alias v='vim'
-alias vf='vim -p'
-
-# git
-alias g='git'
-alias gi='git init'
-alias gs='git status'
-alias gl='git log'
-alias gd='git diff'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git checkout'
-alias gcb='git checkout -b'
-alias gp='git pull'
-alias gm='git merge'
-alias gco='git commit'
-alias gps='git push'
-alias gra='git remote add'
-alias grr='git remote rm'
+function extract {
+ if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+    echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
+    return 1
+ else
+    for n in $@
+    do
+      if [ -f "$n" ] ; then
+          case "${n%,}" in
+            *.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar) 
+                         tar xvf "$n"       ;;
+            *.lzma)      unlzma ./"$n"      ;;
+            *.bz2)       bunzip2 ./"$n"     ;;
+            *.rar)       unrar x -ad ./"$n" ;;
+            *.gz)        gunzip ./"$n"      ;;
+            *.zip)       unzip ./"$n"       ;;
+            *.z)         uncompress ./"$n"  ;;
+            *.7z|*.arj|*.cab|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.rpm|*.udf|*.wim|*.xar)
+                         7z x ./"$n"        ;;
+            *.xz)        unxz ./"$n"        ;;
+            *.exe)       cabextract ./"$n"  ;;
+            *)
+                         echo "extract: '$n' - unknown archive method"
+                         return 1
+                         ;;
+          esac
+      else
+          echo "'$n' - file does not exist"
+          return 1
+      fi
+    done
+fi
+}

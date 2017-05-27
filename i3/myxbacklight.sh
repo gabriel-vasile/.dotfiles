@@ -2,10 +2,10 @@
 #title           :myxbacklight.sh
 #description     :This script will change the luminosity of you notebook screen 
 #                 using the hardware LED.
-#author		       :bgw
+#author		     :Gabriel Vasile
 #date            :20160716
 #version         :0.1
-#usage		       :bash myxbacklight.sh ammount
+#usage		     :bash myxbacklight.sh ammount
 #bash_version    :4.1.5(1)-release
 #==============================================================================
 

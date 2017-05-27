@@ -30,7 +30,7 @@ bindsym $mod+Shift+Return exec gnome-terminal
 
 
 # kill focused window
-bindsym $mod+Shift+q kill
+# bindsym $mod+Shift+q kill
 bindsym $mod+slash kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec i3-dmenu-desktop
@@ -57,10 +57,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -182,7 +182,7 @@ bar {
 	}
 }
 
-bindsym $mod+l exec sxlock
+bindsym $mod+Shift+slash exec sxlock
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -206,16 +206,16 @@ exec feh --bg-scale "/usr/share/wallpapers/Snagged Rosa/contents/images/2560x160
 exec --no-startup-id nm-applet
 
 # bindsym $mod+s+l exec ~/.i3/sleep.sh
-bindsym $mod+F5 exec "sudo /home/gabriel/myxbacklight.sh -100"
-bindsym $mod+F6 exec "sudo /home/gabriel/myxbacklight.sh 100"
-bindsym $mod+F7 exec "sudo /home/gabriel/myxbacklight.sh 0"
+bindsym $mod+F5 exec "sudo myxbacklight.sh -100"
+bindsym $mod+F6 exec "sudo myxbacklight.sh 100"
+bindsym $mod+F7 exec "sudo myxbacklight.sh 0"
 
 for_window [class="^.*"] border pixel 4
 
 bindsym $mod+F10 exec "amixer -D pulse sset Master 0%"
 bindsym $mod+F11 exec "amixer -D pulse sset Master 5%-"
 bindsym $mod+F12 exec "amixer -D pulse sset Master 5%+"
-bindsym $mod+F1 exec "~/.i3/sleep.sh"
+bindsym $mod+F1 exec "~/.config/i3/sleep.sh"
 bindsym $mod+F9 exec gnome-screenshot
 
 bindsym Control+Mod1+Left workspace prev
@@ -229,7 +229,7 @@ bindsym $mod+s exec subl -n
 
 exec_always compton -f -D2 -i 0.7
 exec_always np-applet
-bindsym $mod+Shift+E exec ~/.i3/i3-exit.sh
+bindsym $mod+Shift+E exec ~/config/i3/i3-exit
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 for_window [class="Wine" instance="TeamViewer.exe"] floating enable
 for_window [class="Wine" instance="Hearthstone.exe"] floating enable

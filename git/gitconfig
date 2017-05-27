@@ -1,0 +1,12 @@
+[user]
+	email = vasile.gabriel@email.com
+	name = Gabriel Vasile
+
+[push]
+	default = simple
+
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3

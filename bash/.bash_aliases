@@ -44,7 +44,7 @@ alias gardiff=gardiff_function
 
 # if there are any files comitted in the repo that need to be removed from git
 # but kept on disk
-alias apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
+# alias apply-gitignore=!git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 
 alias fuck='sudo $(history -p \!\!)'
 
