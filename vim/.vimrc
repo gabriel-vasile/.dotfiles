@@ -1,14 +1,14 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'scrooloose/nerdtree',
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
+Plug 'fatih/vim-go'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
@@ -61,5 +61,7 @@ set showmatch
 
 set encoding=utf8
 
-colorscheme desert
-set background=dark
+set t_Co=256
+syntax on
+colorscheme foursee
+source ~/.vim/plugins.vim

@@ -6,7 +6,7 @@ cur_dir=$(pwd)
 backup_dir="$cur_dir/backup-dot"
 
 declare -a packages=(
-	"i3" "vim" "mc" "rxvt-unicode"
+	"i3" "vim" "mc" "rxvt-unicode" "rxvt-unicode-256color" "xclip"
 	"build-essential" "curl" "zlib1g-dev" "cmake"
 	"libreadline-dev" "libssl-dev" "libxml2-dev" "openssl" "libyaml-dev"
 	"unzip" "python" "python-dev" "python-gtk2-dev" "python-pip"
@@ -20,10 +20,12 @@ declare -a config_dirs=(
 	"$HOME/.config/i3"
 	"$HOME/.local/share/mc/skins"
 	"$HOME/.config/mc"
-	"$HOME/.urxvt/ext")
+	"$HOME/.urxvt/ext"
+	"$HOME/Code")
 
 declare -A configs=(
 	["./vim/.vimrc"]="$HOME/.vimrc"
+	["./vim/plugins.vim"]="$HOME/.vim/plugins.vim"
 	["./i3/config"]="$HOME/.config/i3/config"
 	["./i3/i3-exit"]="$HOME/.config/i3/i3-exit"
 	["./i3/sleep.sh"]="$HOME/.config/i3/sleep.sh"
