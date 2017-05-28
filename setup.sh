@@ -11,12 +11,15 @@ declare -a packages=(
 	"libreadline-dev" "libssl-dev" "libxml2-dev" "openssl" "libyaml-dev"
 	"unzip" "python" "python-dev" "python-gtk2-dev" "python-pip"
 	"software-properties-common" "exuberant-ctags" 
-	"fonts-font-awesome" "git" "gitk" "oracle-java8-installer" 
+	"fonts-inconsolata" "fonts-font-awesome" "git" "gitk"
+	"oracle-java8-installer"
 	"mysql-server" "mysql-client"
 	"libx11-dev" "libxext-dev" "libxrandr-dev" "libpam-dev")
 
 declare -a config_dirs=(
-	"$HOME/bin" 
+	"$HOME/bin"
+	"$HOME/.fonts"
+	"$HOME/.vim/colors"
 	"$HOME/.config/i3"
 	"$HOME/.local/share/mc/skins"
 	"$HOME/.config/mc"
@@ -25,6 +28,7 @@ declare -a config_dirs=(
 
 declare -A configs=(
 	["./vim/.vimrc"]="$HOME/.vimrc"
+	["./vim/foursee.vim"]="$HOME/.vim/colors/foursee.vim"
 	["./vim/plugins.vim"]="$HOME/.vim/plugins.vim"
 	["./i3/config"]="$HOME/.config/i3/config"
 	["./i3/i3-exit"]="$HOME/.config/i3/i3-exit"
@@ -89,3 +93,15 @@ git clone https://github.com/VasileGabriel/sxlock.git
 cd sxlock
 make
 mv -f ./sxlock $HOME/bin
+
+
+# Vim plugin manager - Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install Adobe Source Code Pro
+wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
+unzip 1.030R-it.zip
+mkdir -p ~/.fonts
+cp source-code-pro-2.010R-ro-1.030R-it/OTF/*.otf ~/.fonts/
+fc-cache -f -v

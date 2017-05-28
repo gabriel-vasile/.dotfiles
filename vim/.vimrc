@@ -7,8 +7,8 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
-Plug 'fatih/vim-go'
 Plug 'flazz/vim-colorschemes'
+Plug 'godlygeek/csapprox'
 
 call plug#end()
 
@@ -46,6 +46,8 @@ set number
 set showcmd
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+set nowrap
+set textwidth=0 wrapmargin=0
 
 " Use mouse
 if has('mouse')
@@ -63,5 +65,5 @@ set encoding=utf8
 
 set t_Co=256
 syntax on
-colorscheme foursee
 source ~/.vim/plugins.vim
+colorscheme foursee
