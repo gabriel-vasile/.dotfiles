@@ -30,6 +30,13 @@ map <Leader>w :w<CR>
 imap <Leader>w <ESC>:w<CR>
 vmap <Leader>w <ESC><ESC>:w<CR>
 
+" Don't yank on delete and paste
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+xnoremap p pgvy
+
 " Exit insert with jj
 inoremap jj <esc>
 nnoremap JJJJ <nop>
