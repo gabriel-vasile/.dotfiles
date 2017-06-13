@@ -53,6 +53,7 @@ alias dc='docker-compose'
 alias d='docker'
 alias dm='docker-machine'
 
+alias hgrep='history | grep '
 
 function extract {
  if [ -z "$1" ]; then
