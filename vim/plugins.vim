@@ -4,6 +4,9 @@
 "------------------------------------------------------------------------------
 
 " General properties
+
+let g:ctrlp_dont_split = 'NERD'
+
 let NERDTreeDirArrows=1
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.o$', '\.pyc$', '\.php\~$']
@@ -33,3 +36,30 @@ map <leader>l :BufExplorer<cr>
 imap <leader>l <esc>:BufExplorer<cr>
 vmap <leader>l <esc>:BufExplorer<cr>
 
+
+"------------------------------------------------------------------------------
+" Neocomplete
+"------------------------------------------------------------------------------
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 1
+
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" AutoComplPop like behavior.
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_close_preview = 1
+
+
+"------------------------------------------------------------------------------
+" Better whitespace
+"------------------------------------------------------------------------------
+
+
+
+"------------------------------------------------------------------------------
+" vim-go
+"------------------------------------------------------------------------------
+let g:go_fmt_command = "goimports"

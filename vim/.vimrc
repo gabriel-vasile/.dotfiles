@@ -9,13 +9,27 @@ Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/csapprox'
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'shougo/neocomplete.vim'
+Plug 'Shougo/echodoc.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set shortmess+=A
+set noswapfile
 set nocp
 set history=700
-set clipboard=unamedplus
 set autoread
+au CursorHold * checktime
 let g:ctrlp_use_caching = 0
 let g:ctrlp_clear_cache_on_exit = 1
 
@@ -26,9 +40,9 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Fast saving
-map <Leader>w :w<CR>
-imap <Leader>w <ESC>:w<CR>
-vmap <Leader>w <ESC><ESC>:w<CR>
+map <Leader>w :StripWhitespace<CR>:w<CR>
+imap <Leader>w <ESC>:StripWhitespace<CR>:w<CR>
+vmap <Leader>w <ESC><ESC>:StripWhitespace<CR>:w<CR>
 
 " Don't yank on delete and paste
 nnoremap d "_d
@@ -69,7 +83,7 @@ set incsearch
 set showmatch
 
 set encoding=utf8
-
+set clipboard=unnamedplus
 set t_Co=256
 syntax on
 source ~/.vim/plugins.vim
