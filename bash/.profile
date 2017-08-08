@@ -24,3 +24,5 @@ fi
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/Code/go"
 export PATH=$PATH:$(go env GOPATH)/bin
+
+xflux -r 1 -l 46 -g 25
