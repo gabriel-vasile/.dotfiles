@@ -29,6 +29,7 @@ set noswapfile
 set nocp
 set history=700
 set autoread
+set cursorline
 au CursorHold * checktime
 let g:ctrlp_use_caching = 0
 let g:ctrlp_clear_cache_on_exit = 1
