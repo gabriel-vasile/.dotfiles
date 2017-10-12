@@ -16,6 +16,7 @@ let NERDTreeWinSize = 35
 let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
+let NERDTreeShowHidden = 1
 
 " Open NERDTree on startup, when no file has been specified
 autocmd VimEnter * if !argc() | NERDTree | endif
@@ -25,6 +26,12 @@ map <leader>T :NERDTreeFind<cr>
 
 " Toogle on/off
 nmap <leader>o :NERDTreeToggle<cr>
+
+"------------------------------------------------------------------------------
+" CTRLP
+"------------------------------------------------------------------------------
+let g:ctrlp_use_caching = 0
+let g:ctrlp_clear_cache_on_exit = 1
 
 
 "------------------------------------------------------------------------------
@@ -51,13 +58,6 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " AutoComplPop like behavior.
 let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_close_preview = 1
-
-
-"------------------------------------------------------------------------------
-" Better whitespace
-"------------------------------------------------------------------------------
-
-
 
 "------------------------------------------------------------------------------
 " vim-go

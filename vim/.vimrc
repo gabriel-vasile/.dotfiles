@@ -9,8 +9,8 @@ Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/csapprox'
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+" Plug 'elixir-lang/vim-elixir'
+" Plug 'slashmili/alchemist.vim'
 Plug 'shougo/neocomplete.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
@@ -31,11 +31,7 @@ set history=700
 set autoread
 set cursorline
 au CursorHold * checktime
-let g:ctrlp_use_caching = 0
-let g:ctrlp_clear_cache_on_exit = 1
 
-filetype plugin on
-filetype indent on
 
 let mapleader = ","
 let g:mapleader = ","
@@ -45,11 +41,7 @@ map <Leader>w :StripWhitespace<CR>:w<CR>
 imap <Leader>w <ESC>:StripWhitespace<CR>:w<CR>
 vmap <Leader>w <ESC><ESC>:StripWhitespace<CR>:w<CR>
 
-" Don't yank on delete and paste
-nnoremap d "_d
-vnoremap d "_d
-nnoremap D "_D
-vnoremap D "_D
+" Don't yank and paste
 xnoremap p pgvy
 
 " Exit insert with jj
