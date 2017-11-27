@@ -216,10 +216,10 @@ bindsym $mod+F12 exec "amixer -D pulse sset Master 5%+"
 bindsym $mod+F1 exec "~/.config/i3/sleep.sh"
 bindsym $mod+F9 exec gnome-screenshot
 
-bindsym Control+Mod1+Left workspace prev
-bindsym Control+Mod1+Right workspace next
-bindsym Control+Mod1+Shift+Left move container to workspace prev
-bindsym Control+Mod1+Shift+Right move container to workspace next
+# bindsym Control+Mod1+Left workspace prev
+# bindsym Control+Mod1+Right workspace next
+# bindsym Control+Mod1+Shift+Left move container to workspace prev
+# bindsym Control+Mod1+Shift+Right move container to workspace next
 bindsym $mod+c exec nemo
 bindsym $mod+g exec google-chrome
 bindsym $mod+Shift+g exec google-chrome --incognito
