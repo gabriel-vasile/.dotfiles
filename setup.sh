@@ -38,6 +38,7 @@ declare -A configs=(
 	["./mc/darkened.ini"]="$HOME/.local/share/mc/skins/darkened.ini"
 	["./mc/ini"]="$HOME/.config/mc/ini"
 	["./mc/menu"]="$HOME/.config/mc/menu"
+	["./mc/mc.ext"]="$HOME/.config/mc/mc.ext"
 	["./urxvt/.Xresources"]="$HOME/.Xresources"
 	["./urxvt/clipboard"]="$HOME/.urxvt/ext/clipboard"
 	["./bash/.profile"]="$HOME/.profile"
