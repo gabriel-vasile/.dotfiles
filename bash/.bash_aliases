@@ -8,6 +8,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # git
+alias gitk='grv'
 alias g='git'
 alias gi='git init'
 alias gs='git status'
@@ -28,11 +29,21 @@ alias gst='git stash'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gstd='git stash drop'
-alias gpushom='git push origin master'
 alias gpullom='git pull origin master'
+# alias gpushom='git push origin master'
 alias grh='git reset --hard'
 function glf() { git log --all --grep="$1"; }
 
+function fail() {
+    echo -e "\033[00;31m! $1\033[0m"
+}
+function gpushom_function() {
+    if git remote show origin | grep -q "local out of date"; then
+        fail "different head on remote"
+    else
+        git push origin master
+    fi
+}
 function gardiff_function() {
 	if [ "$#" -ne 1 ]; then
 		git archive -o update.zip HEAD $(git diff --name-only)
@@ -40,8 +51,15 @@ function gardiff_function() {
     	git archive -o update.zip HEAD $(git diff --name-only HEAD~$1)
     fi
 }
+function grin_function() {
+    if [ "$#" -eq 1 ]; then
+        grep -Irn $1 .
+    fi
+}
 
 alias gardiff=gardiff_function
+alias grin=grin_function
+alias gpushom=gpushom_function
 
 # if there are any files comitted in the repo that need to be removed from git
 # but kept on disk
@@ -66,7 +84,7 @@ function extract {
     do
       if [ -f "$n" ] ; then
           case "${n%,}" in
-            *.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar) 
+            *.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar)
                          tar xvf "$n"       ;;
             *.lzma)      unlzma ./"$n"      ;;
             *.bz2)       bunzip2 ./"$n"     ;;

@@ -10,7 +10,7 @@ declare -a packages=(
 	"build-essential" "curl" "zlib1g-dev" "cmake"
 	"libreadline-dev" "libssl-dev" "libxml2-dev" "openssl" "libyaml-dev"
 	"unzip" "python" "python-dev" "python-gtk2-dev" "python-pip"
-	"software-properties-common" "exuberant-ctags" 
+	"software-properties-common" "exuberant-ctags"
 	"fonts-inconsolata" "fonts-font-awesome" "git" "gitk"
 	"oracle-java8-installer"
 	"mysql-server" "mysql-client"
@@ -66,7 +66,7 @@ do
 done
 
 
-# Some folders are not created 
+# Some folders are not created
 # once the package is installed...
 for config_dir in "${config_dirs[@]}"
 do
@@ -95,6 +95,10 @@ cd sxlock
 make
 mv -f ./sxlock $HOME/bin
 
+cd "/tmp"
+wget -O grv https://github.com/rgburke/grv/releases/download/v0.1.2/grv_v0.1.2_linux64
+chmod +x ./grv
+mv -f ./grv $HOME/bin
 
 # Vim plugin manager - Plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

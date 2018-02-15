@@ -36,6 +36,18 @@ au CursorHold * checktime
 let mapleader = ","
 let g:mapleader = ","
 
+" Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 " Fast saving
 map <Leader>w :StripWhitespace<CR>:w<CR>
 imap <Leader>w <ESC>:StripWhitespace<CR>:w<CR>
@@ -81,3 +93,4 @@ set t_Co=256
 syntax on
 source ~/.vim/plugins.vim
 colorscheme foursee
+set autoread

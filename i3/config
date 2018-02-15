@@ -25,8 +25,8 @@ font pango:System San Francisco Display 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal -e mc 
-bindsym $mod+Shift+Return exec gnome-terminal 
+bindsym $mod+Return exec gnome-terminal -e mc
+bindsym $mod+Shift+Return exec gnome-terminal
 
 
 # kill focused window

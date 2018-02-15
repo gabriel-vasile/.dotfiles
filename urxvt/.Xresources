@@ -79,12 +79,12 @@ URxvt.perl-ext-common: default,clipboard
 !URxvt.font:     xft:monaco:size=11:antialias=true
 !URxvt.boldFont: xft:lato:bold:size=11:antialias=true
 
-URxvt.font: xft:Inconsolata-12
-URxvt.boldFont: xft:Inconsolata-12
-URxvt.letterSpace: -1
-
+!URxvt.font: xft:Inconsolata-12
+!URxvt.boldFont: xft:Inconsolata-12
+!URxvt.letterSpace: -1
+!URxvt.font: xft:Monospace:pixelsize=12
+!URxvt.boldFont: xft:Monospace:pixelsize=12
 !URxvt.font: xft:Iosevka-12
 !URxvt.boldFont: xft:Iosevka-12
-
-!URxvt.font: xft:Source Code Pro:size=10
-!URxvt.letterSpace:          -2
+URxvt.font: xft:Source Code Pro:pixelsize=12
+URxvt.letterSpace:          -2
