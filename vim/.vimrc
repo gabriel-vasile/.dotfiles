@@ -60,6 +60,10 @@ xnoremap p pgvy
 inoremap jj <esc>
 nnoremap JJJJ <nop>
 
+" Preserve selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
 " Center the cursor
 set so=999
 
