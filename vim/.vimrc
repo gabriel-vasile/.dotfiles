@@ -64,6 +64,9 @@ nnoremap JJJJ <nop>
 vnoremap < <gv
 vnoremap > >gv
 
+" :w!! to save a readonly file
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " Center the cursor
 set so=999
 
