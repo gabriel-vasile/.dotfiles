@@ -16,6 +16,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 

@@ -1,3 +1,5 @@
+[core]
+    editor = vim
 [user]
 	email = vasile.gabriel@email.com
 	name = Gabriel Vasile
@@ -10,3 +12,4 @@
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
+
