@@ -21,6 +21,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 # xinput set-prop 15 "Device Enabled" 0
+export LESS=-RFX
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/Code/go"
 export PATH=$PATH:$(go env GOPATH)/bin

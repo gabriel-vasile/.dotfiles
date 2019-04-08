@@ -43,6 +43,7 @@ declare -A configs=(
 	["./urxvt/clipboard"]="$HOME/.urxvt/ext/clipboard"
 	["./bash/.profile"]="$HOME/.profile"
 	["./bash/.bash_aliases"]="$HOME/.bash_aliases"
+	["./ack/.ackrc"]="$HOME/.ackrc"
 	["./git/gitconfig"]="$HOME/.gitconfig")
 
 
