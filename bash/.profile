@@ -26,4 +26,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH="$HOME/Code/go"
 export PATH=$PATH:$(go env GOPATH)/bin
 
-ssh-add ~/.ssh/id_rsa_activemall
+xinput --disable 13
+redshift-gtk -l 45.45:28.05 -t 5700:3600 -g 0.8 &
+xmodmap -e "keycode 94 = Shift_L"
+export KUBECONFIG=$HOME/.kube/admin.conf

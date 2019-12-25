@@ -170,7 +170,6 @@ hide_edge_borders both
 
 # bar
 bar {
-    mode invisible
   	status_command SCRIPT_DIR=/usr/libexec/i3blocks i3blocks
 	colors {
 		background $bg-color
