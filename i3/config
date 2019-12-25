@@ -206,9 +206,9 @@ exec feh --bg-scale "/usr/share/wallpapers/Snagged Rosa/contents/images/2560x160
 exec --no-startup-id nm-applet
 
 # bindsym $mod+s+l exec ~/.i3/sleep.sh
-bindsym $mod+F5 exec "sudo myxbacklight.sh -100"
-bindsym $mod+F6 exec "sudo myxbacklight.sh 100"
-bindsym $mod+F7 exec "sudo myxbacklight.sh 0"
+bindsym $mod+F5 exec "sudo ~/bin/myxbacklight.sh -50"
+bindsym $mod+F6 exec "sudo ~/bin/myxbacklight.sh 50"
+bindsym $mod+F7 exec "sudo ~/bin/myxbacklight.sh 0"
 
 for_window [class="^.*"] border pixel 4
 
@@ -217,6 +217,7 @@ bindsym $mod+F11 exec "amixer -D pulse sset Master 5%-"
 bindsym $mod+F12 exec "amixer -D pulse sset Master 5%+"
 bindsym $mod+F1 exec "~/.config/i3/sleep.sh"
 bindsym $mod+F9 exec gnome-screenshot
+bindsym $mod+F8 exec monitor.sh
 
 # bindsym Control+Mod1+Left workspace prev
 # bindsym Control+Mod1+Right workspace next

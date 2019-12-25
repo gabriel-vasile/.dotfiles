@@ -7,7 +7,7 @@ function backup_dot() {
 	if [[ ! -d "$bdir" ]] ; then
 	    mkdir "$bdir"
 	fi
-	
+
 	if [[ -f "$dot" && ! -L "$dot" ]] ; then
 		mv "$dot" "$bdir"
 	fi

@@ -66,6 +66,7 @@ alias gpushom=gpushom_function
 # alias apply-gitignore=!git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached
 
 alias fuck='sudo $(history -p \!\!)'
+alias nemo='nautilus --no-desktop'
 
 alias dc='docker-compose'
 alias d='docker'

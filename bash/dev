@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+noWindows=3
+re='^[0-9]+$'
+if [[ $1 =~ $re ]]; then
+    noWindows=$1
+fi
+
+for i in `seq 1 $noWindows`;
+do
+    urxvt -e bash -c 'vim .' &
+done
