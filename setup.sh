@@ -53,7 +53,7 @@ sudo apt-get -y upgrade
 sudo apt-add-repository -y ppa:webupd8team/java
 
 
-# Install'em
+# Install packages
 for package in "${packages[@]}"
 do
 	# Check current status of package
@@ -67,8 +67,8 @@ do
 done
 
 
-# Some folders are not created
-# once the package is installed...
+# Some config dirs are not created once the package is installed.
+# Create these dirs so the config files can be symlinked into. 
 for config_dir in "${config_dirs[@]}"
 do
 	if [ ! -d "$config_dir" ] ; then
@@ -76,7 +76,7 @@ do
 	fi
 done
 
-# Config'em
+# Symlink config files to their appropriate locations.
 for key in "${!configs[@]}"; do
 	backup_dot "${configs[$key]}" $backup_dir
 	ln -fsn "$cur_dir/$key" "${configs[$key]}"
@@ -97,15 +97,12 @@ make
 mv -f ./sxlock $HOME/bin
 
 cd "/tmp"
-wget -O grv https://github.com/rgburke/grv/releases/download/v0.1.2/grv_v0.1.2_linux64
-chmod +x ./grv
-mv -f ./grv $HOME/bin
 
 # Vim plugin manager - Plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Install Adobe Source Code Pro
+# Install Adobe Source Code Pro.
 wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
 unzip 1.030R-it.zip
 mkdir -p ~/.fonts
