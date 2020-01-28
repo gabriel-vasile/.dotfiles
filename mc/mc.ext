@@ -52,3 +52,16 @@ shell/i/.svg
 include/image
 	Open=feh %f
 	View=%view{ascii} /usr/lib/mc/ext.d/image.sh view ALL_FORMATS
+
+type/^PDF
+    Open=(see %f &)
+    #Open=(acroread %f &)
+    #Open=(ghostview %f &)
+    View=%view{ascii} pdftotext %f -
+
+regex/i/\.xlsx*$
+    Open=(see %f &)
+regex/i/\.docx*$
+    Open=(see %f &)
+regex/i/\.pptx*$
+    Open=(see %f &)
