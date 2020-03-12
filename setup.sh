@@ -6,8 +6,8 @@ cur_dir=$(pwd)
 backup_dir="$cur_dir/backup-dot"
 
 declare -a packages=(
-	"i3" "vim" "mc" "rxvt-unicode" "rxvt-unicode-256color" "xclip"
-	"build-essential" "curl" "zlib1g-dev" "cmake"
+	"i3" "i3blocks" "vim" "mc" "rxvt-unicode" "rxvt-unicode-256color" "xclip"
+	"ack" "build-essential" "curl" "zlib1g-dev" "cmake"
 	"libreadline-dev" "libssl-dev" "libxml2-dev" "openssl" "libyaml-dev"
 	"unzip" "python" "python-dev" "python-gtk2-dev" "python-pip"
 	"software-properties-common" "exuberant-ctags"
@@ -68,7 +68,7 @@ done
 
 
 # Some config dirs are not created once the package is installed.
-# Create these dirs so the config files can be symlinked into. 
+# Create these dirs so the config files can be symlinked into.
 for config_dir in "${config_dirs[@]}"
 do
 	if [ ! -d "$config_dir" ] ; then
