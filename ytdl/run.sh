@@ -5,7 +5,10 @@
 # !.gitignore
 # EOF
 
-docker build -t ytdl .
+set -u
+set -e
+
+docker build --no-cache -t ytdl .
 google-chrome --new-window \
     https://developers.google.com/youtube/v3/docs/playlists/list?apix=true
 
