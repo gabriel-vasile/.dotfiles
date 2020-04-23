@@ -14,6 +14,9 @@ Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
+Plug 'rust-lang/rust.vim'
+Plug 'majutsushi/tagbar'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 

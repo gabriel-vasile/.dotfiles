@@ -205,8 +205,8 @@ exec feh --bg-scale "/usr/share/wallpapers/Snagged Rosa/contents/images/2560x160
 exec --no-startup-id nm-applet
 
 # bindsym $mod+s+l exec ~/.i3/sleep.sh
-bindsym $mod+F5 exec "sudo ~/bin/myxbacklight.sh -50"
-bindsym $mod+F6 exec "sudo ~/bin/myxbacklight.sh 50"
+bindsym $mod+F5 exec "sudo ~/bin/myxbacklight.sh -5"
+bindsym $mod+F6 exec "sudo ~/bin/myxbacklight.sh 5"
 bindsym $mod+F7 exec "sudo ~/bin/myxbacklight.sh 0"
 
 for_window [class="^.*"] border pixel 4
@@ -222,7 +222,7 @@ bindsym $mod+F8 exec monitor.sh
 # bindsym Control+Mod1+Right workspace next
 # bindsym Control+Mod1+Shift+Left move container to workspace prev
 # bindsym Control+Mod1+Shift+Right move container to workspace next
-bindsym $mod+c exec nautilus
+bindsym $mod+c exec nautilus --no-desktop
 bindsym $mod+g exec google-chrome
 bindsym $mod+Shift+g exec google-chrome --incognito
 bindsym $mod+s exec subl -n

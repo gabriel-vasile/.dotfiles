@@ -19,7 +19,7 @@ MAX_LUMINOSITY_CONTAINER="/sys/class/backlight/intel_backlight/max_brightness"
 LUMINOSITY_CONTAINER="/sys/class/backlight/intel_backlight/brightness"
 typeset -i max_lum=$(cat $MAX_LUMINOSITY_CONTAINER)
 typeset -i cur_lum=$(cat $LUMINOSITY_CONTAINER)
-def_inc_ammount=$((-25))
+def_inc_ammount=$((-1))
 inc_ammount=${1:-def_inc_ammount}
 
 if test $inc_ammount -eq 0 ; then

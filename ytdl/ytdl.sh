@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -u
+set -e
+set -o xtrace
+
 dstFolder="ytdl-storage"
 
 # playlists to backup
@@ -52,12 +56,12 @@ while [ $justStarted -gt 0 ] || ! [ $nextPageToken == 'null' ]; do
     curl -X GET \
       --compressed -s \
       "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=LL-9M-5IV4D8XwUs4ne15H-w&maxResults=50&pageToken=$nextPageToken" \
+      -H "authorization: Bearer $YTAPIKEY" \
       -H 'Cache-Control: no-cache' \
       -H 'accept: application/json' \
       -H 'accept-encoding: gzip, deflate, br' \
       -H 'accept-language: ro-RO,ro;q=0.9,en-US;q=0.8,en;q=0.7' \
       -H 'authority: content.googleapis.com' \
-      -H "authorization: Bearer $YTBEARERTOKEN" \
       -H 'pragma: no-cache' \
       -H 'referer: https://content.googleapis.com/static/proxy.html?usegapi=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.ro.4t_fny0jeRk.O%2Fam%3DAQc%2Fd%3D1%2Fct%3Dzgms%2Frs%3DAGLTcCOlhX81xMI7fKXIGMrilMpg_q9TkQ%2Fm%3D__features__' \
       -H 'sec-fetch-mode: cors' \
@@ -77,10 +81,11 @@ done
 
 while read v; do
     youtube-dl --download-archive "archive-liked.log" \
+        --verbose \
         --ignore-errors \
         --extract-audio \
         --audio-format mp3 \
         --xattrs \
         -o "$dstFolder/liked/%(title)s.%(ext)s" \
-        "$v"
+        "https://www.youtube.com/watch?v=$v"
 done </tmp/videoIds

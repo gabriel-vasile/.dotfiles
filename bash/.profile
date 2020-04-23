@@ -21,12 +21,13 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 # xinput set-prop 15 "Device Enabled" 0
+export EDITOR=vim
 export LESS=-RFX
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH="$HOME/Code/go"
-export PATH=$PATH:$(go env GOPATH)/bin
 
 xinput --disable 13
 redshift-gtk -l 45.45:28.05 -t 5700:3600 -g 0.8 &
 xmodmap -e "keycode 94 = Shift_L"
-export KUBECONFIG=$HOME/.kube/admin.conf
+dropbox start
+
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -109,3 +109,6 @@ function extract {
     done
 fi
 }
+
+# kube
+alias kc=kubectl

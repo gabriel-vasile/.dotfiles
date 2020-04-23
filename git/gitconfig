@@ -13,3 +13,5 @@
 	tool = vimdiff
 	conflictstyle = diff3
 
+[url "ssh://git@git.activemall.ro/"]
+	insteadOf = https://git.activemall.ro/

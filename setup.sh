@@ -108,3 +108,8 @@ unzip 1.030R-it.zip
 mkdir -p ~/.fonts
 cp source-code-pro-2.010R-ro-1.030R-it/OTF/*.otf ~/.fonts/
 fc-cache -f -v
+
+# Install ytdl crontab
+crontab -l > /tmp/mycron
+echo "0 4 * * * cd $(pwd)/ytdl && ./run.sh" >> /tmp/mycron
+crontab /tmp/mycron
