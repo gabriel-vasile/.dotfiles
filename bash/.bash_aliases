@@ -8,7 +8,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # git
-alias gitk='grv'
 alias g='git'
 alias gi='git init'
 alias gs='git status'
