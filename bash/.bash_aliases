@@ -29,6 +29,7 @@ alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias gpullom='git pull origin master'
+alias gfa='git fetch --all'
 # alias gpushom='git push origin master'
 alias grh='git reset --hard'
 function glf() { git log --all --grep="$1"; }
