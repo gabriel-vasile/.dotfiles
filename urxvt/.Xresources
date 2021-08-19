@@ -86,5 +86,5 @@ URxvt.perl-ext-common: default,clipboard
 !URxvt.boldFont: xft:Monospace:pixelsize=12
 !URxvt.font: xft:Iosevka-12
 !URxvt.boldFont: xft:Iosevka-12
-URxvt.font: xft:Source Code Pro:pixelsize=12
+URxvt.font: xft:Source Code Pro:pixelsize=13
 URxvt.letterSpace:          -2
