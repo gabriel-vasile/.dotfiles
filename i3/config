@@ -210,9 +210,9 @@ exec feh --bg-scale "/usr/share/wallpapers/Snagged Rosa/contents/images/2560x160
 exec --no-startup-id nm-applet
 
 # bindsym $mod+s+l exec ~/.i3/sleep.sh
-bindsym $mod+F5 exec "sudo ~/bin/myxbacklight.sh -5"
-bindsym $mod+F6 exec "sudo ~/bin/myxbacklight.sh 5"
-bindsym $mod+F7 exec "sudo ~/bin/myxbacklight.sh 0"
+bindsym $mod+F5 exec "sudo ~/bin/myxbacklight.sh -300"
+bindsym $mod+F6 exec "sudo ~/bin/myxbacklight.sh 300"
+bindsym $mod+F7 exec "sudo ~/bin/myxbacklight.sh 3000"
 
 for_window [class="^.*"] border pixel 4
 
@@ -240,3 +240,5 @@ for_window [class="Wine" instance="TeamViewer.exe"] floating enable
 for_window [class="Wine" instance="Hearthstone.exe"] floating enable
 for_window [class="Wine" instance="WorldOfTanks.exe"] floating enable
 
+exec dropbox start -i
+exec redshift-gtk -l 45.45:28.05 -t 9700:3600 -g 0.8
