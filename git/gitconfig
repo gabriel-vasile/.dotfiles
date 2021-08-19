@@ -1,8 +1,9 @@
 [core]
     editor = vim
 [user]
-	email = vasile.gabriel@email.com
+	email = gabriel.vasile@email.com
 	name = Gabriel Vasile
+	signingkey = D9E0132E0E6ABD9E
 
 [push]
 	default = simple
