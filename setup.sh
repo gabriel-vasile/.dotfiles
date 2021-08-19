@@ -6,13 +6,12 @@ cur_dir=$(pwd)
 backup_dir="$cur_dir/backup-dot"
 
 declare -a packages=(
-	"i3" "i3blocks" "vim" "mc" "rxvt-unicode" "rxvt-unicode-256color" "xclip"
+	"i3" "i3blocks" "mc" "rxvt-unicode" "rxvt-unicode-256color" "xclip"
 	"ack" "build-essential" "curl" "zlib1g-dev" "cmake"
 	"libreadline-dev" "libssl-dev" "libxml2-dev" "openssl" "libyaml-dev"
 	"unzip" "python" "python-dev" "python-gtk2-dev" "python-pip"
 	"software-properties-common" "exuberant-ctags"
 	"fonts-inconsolata" "fonts-font-awesome" "git" "gitk"
-	"oracle-java8-installer"
 	"mysql-server" "mysql-client"
 	"libx11-dev" "libxext-dev" "libxrandr-dev" "libpam-dev")
 
