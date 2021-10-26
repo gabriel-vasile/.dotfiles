@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -x
 set -u
 set -e
 set -o xtrace
@@ -54,7 +55,7 @@ while [ $justStarted -gt 0 ] || ! [ $nextPageToken == 'null' ]; do
     sleep 1
     justStarted="0"
     curl -X GET \
-      --compressed -s \
+      --compressed \
       "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=LL-9M-5IV4D8XwUs4ne15H-w&maxResults=50&pageToken=$nextPageToken" \
       -H "authorization: Bearer $YTAPIKEY" \
       -H 'Cache-Control: no-cache' \
