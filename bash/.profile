@@ -28,6 +28,7 @@ redshift -l 45.45:28.05 -t 10700:3600 -g 0.8 &
 # dropbox start
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 xinput --disable 15
 export GPG_TTY=$(tty)
