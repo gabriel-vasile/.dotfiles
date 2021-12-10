@@ -22,7 +22,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 export EDITOR=vim
 export LESS=-RFX
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/usr/local/go/bin"
 
 redshift -l 45.45:28.05 -t 10700:3600 -g 0.8 &
 # dropbox start
