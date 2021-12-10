@@ -10,7 +10,7 @@
 set -u
 set -e
 
-docker build -t ytdl .
+docker build -t ytdl --network=host .
 google-chrome --new-window \
     https://developers.google.com/youtube/v3/docs/playlists/list?apix=true
 

@@ -15,7 +15,7 @@ declare -a audios=(
     "https://www.youtube.com/playlist?list=PLf19ZF7ZhHCnsuXsDtIpGqulMXa7zflk3"
     "https://www.youtube.com/playlist?list=PLf19ZF7ZhHCnh0UuG-SjyYakO9RxE0DiI"
     "https://www.youtube.com/playlist?list=PLf19ZF7ZhHCnUO6WIBWzAgE64zYzN9_Xh"
-
+    "https://www.youtube.com/playlist?list=PLf19ZF7ZhHCnn4FunLronNut9ROAzb8b8"
 )
 declare -a videos=(
     "https://www.youtube.com/playlist?list=PLf19ZF7ZhHCkXtr-BkD6RuPtC74eTw2Q4"
@@ -82,11 +82,12 @@ done
 
 while read v; do
     youtube-dl --download-archive "archive-liked.log" \
+        --rm-cache-dir \
         --verbose \
         --ignore-errors \
         --extract-audio \
         --audio-format mp3 \
         --xattrs \
         -o "$dstFolder/liked/%(title)s.%(ext)s" \
-        "https://www.youtube.com/watch?v=$v"
+        "https://www.youtube.com/watch?v=$v" || true
 done </tmp/videoIds
