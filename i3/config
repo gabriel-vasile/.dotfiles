@@ -229,8 +229,8 @@ bindsym $mod+F8 exec monitor.sh
 # bindsym Control+Mod1+Shift+Left move container to workspace prev
 # bindsym Control+Mod1+Shift+Right move container to workspace next
 bindsym $mod+c exec nautilus --no-desktop
-bindsym $mod+g exec google-chrome
-bindsym $mod+Shift+g exec google-chrome --incognito
+bindsym $mod+g exec chrome
+bindsym $mod+Shift+g exec chrome --incognito
 bindsym $mod+s exec subl -n
 
 exec_always compton -f -D2 -i 0.7
