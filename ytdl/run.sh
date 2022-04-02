@@ -11,7 +11,7 @@ set -u
 set -e
 
 docker build -t ytdl --network=host .
-google-chrome --new-window \
+sensible-browser --new-window \
     https://developers.google.com/youtube/v3/docs/playlists/list?apix=true
 
 echo "complete login in yt demo and copy auth bearer token here"
