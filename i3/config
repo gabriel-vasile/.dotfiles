@@ -211,3 +211,12 @@ for_window [class="Wine" instance="WorldOfTanks.exe"] floating enable
 
 exec dropbox start -i
 exec redshift-gtk -l 45.45:28.05 -t 9700:3600 -g 0.8
+
+# scratchpad for todos.
+for_window [instance="scratchpad"] floating enable
+for_window [instance="scratchpad"] resize set 960 400
+for_window [instance="scratchpad"] move position center
+for_window [instance="scratchpad"] move scratchpad
+bindsym $mod+n scratchpad show; move position center
+bindsym $mod+Shift+n move scratchpad
+exec --no-startup-id urxvt -name scratchpad -e bash -c 'vim /home/gabriel/Dropbox/todo'
