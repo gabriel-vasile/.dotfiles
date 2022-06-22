@@ -199,6 +199,7 @@ bindsym $mod+F8 exec monitor.sh
 bindsym $mod+c exec nautilus --no-desktop
 bindsym $mod+g exec firefox
 bindsym $mod+Shift+g exec firefox --private-window
+bindsym $mod+Shift+t exec firefox -P work
 bindsym $mod+s exec subl -n
 
 exec_always compton -f -D2 -i 0.7
