@@ -201,6 +201,7 @@ bindsym $mod+g exec firefox -P default-release
 bindsym $mod+Shift+g exec firefox --private-window
 bindsym $mod+Shift+t exec firefox -P work
 bindsym $mod+s exec subl -n
+bindsym $mod+p exec "~/bin/toggletouchpad.sh"
 
 exec_always compton -f -D2 -i 0.7
 exec_always np-applet

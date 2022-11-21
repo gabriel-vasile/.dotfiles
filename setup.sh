@@ -33,7 +33,6 @@ declare -A configs=(
 	["./i3/i3-exit"]="$HOME/.config/i3/i3-exit"
 	["./i3/sleep.sh"]="$HOME/.config/i3/sleep.sh"
 	["./i3/i3blocks.conf"]="$HOME/.i3blocks.conf"
-	["./i3/myxbacklight.sh"]="$HOME/bin/myxbacklight.sh"
 	["./mc/darkened.ini"]="$HOME/.local/share/mc/skins/darkened.ini"
 	["./mc/ini"]="$HOME/.config/mc/ini"
 	["./mc/menu"]="$HOME/.config/mc/menu"
@@ -43,7 +42,9 @@ declare -A configs=(
 	["./bash/.profile"]="$HOME/.profile"
 	["./bash/.bash_aliases"]="$HOME/.bash_aliases"
 	["./ack/.ackrc"]="$HOME/.ackrc"
-	["./git/gitconfig"]="$HOME/.gitconfig")
+	["./git/gitconfig"]="$HOME/.gitconfig"
+	["./i3/toggletouchpad.sh"]="$HOME/bin/toggletouchpad.sh"
+	["./i3/myxbacklight.sh"]="$HOME/bin/myxbacklight.sh")
 
 
 # Keep sudo commands at the top
