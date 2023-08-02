@@ -113,3 +113,6 @@ fi
 
 # kube
 alias kc=kubectl
+# Pin to the tail of long commands for an audible alert after long processes.
+# Example: curl http://downloads.com/hugefile.zip; lmk
+alias lmk='say "Process complete."'
