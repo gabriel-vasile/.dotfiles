@@ -3,12 +3,17 @@
 -- This hammerspoon config works around this limitation
 -- by moving the cursor to some "calculated" positions an
 -- then left clicking.
-hs.hotkey.bind({"alt"}, "1", function()
-    clickLeftSpace()
-end)
-hs.hotkey.bind({"alt"}, "0", function()
-    clickRightSpace()
-end)
+hs.hotkey.bind({"alt"}, "`", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "1", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "2", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "3", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "4", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "5", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "6", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "7", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "8", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "9", function() clickLeftSpace() end)
+hs.hotkey.bind({"alt"}, "0", function() clickRightSpace() end)
 
 
 function clickLeftSpace()
