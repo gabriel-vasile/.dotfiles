@@ -14,6 +14,8 @@ hs.hotkey.bind({"alt"}, "7", function() clickLeftSpace() end)
 hs.hotkey.bind({"alt"}, "8", function() clickLeftSpace() end)
 hs.hotkey.bind({"alt"}, "9", function() clickLeftSpace() end)
 hs.hotkey.bind({"alt"}, "0", function() clickRightSpace() end)
+hs.hotkey.bind({"alt"}, "f11", function() incVolume(-3) end)
+hs.hotkey.bind({"alt"}, "f12", function() incVolume(3) end)
 
 
 function clickLeftSpace()
@@ -40,3 +42,11 @@ function reloadConfig(files)
 end
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.alert.show("Config loaded")
+
+function incVolume(by)
+    local newVolume = hs.audiodevice.current().volume + by
+    if newVolume < 0 then hs.audiodevice.defaultOutputDevice():setMuted(true) end
+    if newVolume > 100 then newVolume = 100 end
+    if by > 0 then hs.audiodevice.defaultOutputDevice():setMuted(false) end
+    hs.audiodevice.defaultOutputDevice():setVolume(newVolume)
+end
