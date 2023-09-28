@@ -17,6 +17,18 @@ hs.hotkey.bind({"alt"}, "0", function() clickRightSpace() end)
 hs.hotkey.bind({"alt"}, "f11", function() incVolume(-3) end)
 hs.hotkey.bind({"alt"}, "f12", function() incVolume(3) end)
 
+-- I have no idea how these space IDs are chosen, or if they change
+-- at restart. For some reason space 2 has ID 3 and so on...
+hs.hotkey.bind({"alt", "shift"}, "1", function() moveToSpace(1) end)
+hs.hotkey.bind({"alt", "shift"}, "2", function() moveToSpace(3) end)
+hs.hotkey.bind({"alt", "shift"}, "3", function() moveToSpace(4) end)
+hs.hotkey.bind({"alt", "shift"}, "4", function() moveToSpace(5) end)
+hs.hotkey.bind({"alt", "shift"}, "5", function() moveToSpace(6) end)
+hs.hotkey.bind({"alt", "shift"}, "6", function() moveToSpace(7) end)
+hs.hotkey.bind({"alt", "shift"}, "7", function() moveToSpace(8) end)
+hs.hotkey.bind({"alt", "shift"}, "8", function() moveToSpace(9) end)
+hs.hotkey.bind({"alt", "shift"}, "9", function() moveToSpace(10) end)
+hs.hotkey.bind({"alt", "shift"}, "0", function() moveToSpace(1766) end)
 
 function clickLeftSpace()
     clickAndMove({x=754, y=5}, {x=754, y=492})
@@ -49,4 +61,9 @@ function incVolume(by)
     if newVolume > 100 then newVolume = 100 end
     if by > 0 then hs.audiodevice.defaultOutputDevice():setMuted(false) end
     hs.audiodevice.defaultOutputDevice():setVolume(newVolume)
+end
+
+function moveToSpace(space)
+    local win = hs.window.focusedWindow()
+    hs.spaces.moveWindowToSpace(win, space)
 end
