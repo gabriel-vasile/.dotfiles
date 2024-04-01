@@ -2,20 +2,23 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdtree',
-Plug 'fatih/vim-go'
+Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/csapprox'
-Plug 'Shougo/echodoc.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 

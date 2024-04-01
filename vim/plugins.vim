@@ -33,40 +33,26 @@ let g:ctrlp_use_caching = 0
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
-
 "------------------------------------------------------------------------------
-" BufExplorer
+" ale
 "------------------------------------------------------------------------------
-
-" Shortcuts, type <leader>l to quickly navigate to necessary buffer
-map <leader>l :BufExplorer<cr>
-imap <leader>l <esc>:BufExplorer<cr>
-vmap <leader>l <esc>:BufExplorer<cr>
-
-
-"------------------------------------------------------------------------------
-" Neocomplete
-"------------------------------------------------------------------------------
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 1
-
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#enable_auto_close_preview = 1
-
-"------------------------------------------------------------------------------
-" vim-go
-"------------------------------------------------------------------------------
-let g:go_fmt_command = "goimports"
-let g:go_gopls_options = ['-remote=auto']
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'go': ['goimports'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+map gd :ALEGoToDefinition<cr>
+map gr :ALEFindReferences<cr>
 
 "------------------------------------------------------------------------------
 " rust.vim
 "------------------------------------------------------------------------------
 let g:rustfmt_autosave = 1
 nmap <F8> :TagbarToggle<CR>
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {
+\ '_': ['ale'],
+\})
