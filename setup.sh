@@ -39,8 +39,6 @@ declare -A configs=(
 	["./mc/mc.ext"]="$HOME/.config/mc/mc.ext"
 	["./urxvt/.Xresources"]="$HOME/.Xresources"
 	["./urxvt/clipboard"]="$HOME/.urxvt/ext/clipboard"
-	["./bash/.profile"]="$HOME/.profile"
-	["./bash/.bash_aliases"]="$HOME/.bash_aliases"
 	["./ack/.ackrc"]="$HOME/.ackrc"
 	["./git/gitconfig"]="$HOME/.gitconfig"
 	["./i3/toggletouchpad.sh"]="$HOME/bin/toggletouchpad.sh"
@@ -49,9 +47,6 @@ declare -A configs=(
 
 # Keep sudo commands at the top
 sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-add-repository -y ppa:webupd8team/java
-
 
 # Install packages
 for package in "${packages[@]}"
@@ -91,25 +86,8 @@ cd "/tmp"
 if [ -d "sxlock" ] ; then
     rm -rf sxlock
 fi
-git clone https://github.com/VasileGabriel/sxlock.git
+git clone https://github.com/lahwaacz/sxlock.git
 cd sxlock
 make
 mv -f ./sxlock $HOME/bin
 
-cd "/tmp"
-
-# Vim plugin manager - Plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Install Adobe Source Code Pro.
-wget https://github.com/adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.zip
-unzip 1.030R-it.zip
-mkdir -p ~/.fonts
-cp source-code-pro-2.010R-ro-1.030R-it/OTF/*.otf ~/.fonts/
-fc-cache -f -v
-
-# Install ytdl crontab
-crontab -l > /tmp/mycron
-echo "0 4 * * * cd $(pwd)/ytdl && ./run.sh" >> /tmp/mycron
-crontab /tmp/mycron

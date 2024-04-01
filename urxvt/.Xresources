@@ -67,3 +67,8 @@
 *color15:                 S_base3
 
 URxvt.scrollBar: false
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
+URxvt.font: xft:Monospace:pixelsize=11.5
+URxvt.letterSpace:          0

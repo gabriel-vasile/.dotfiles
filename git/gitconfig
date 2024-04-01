@@ -3,7 +3,7 @@
 [user]
 	email = gabriel.vasile@email.com
 	name = Gabriel Vasile
-	signingkey = D9E0132E0E6ABD9E
+	signingkey = C4735A091F7FCC75
 
 [push]
 	default = simple
@@ -16,3 +16,5 @@
 
 [url "ssh://git@git.activemall.ro/"]
 	insteadOf = https://git.activemall.ro/
+[commit]
+	gpgsign = true

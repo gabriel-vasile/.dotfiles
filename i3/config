@@ -105,8 +105,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Escape exec "sudo systemctl hibernate"
-bindsym $mod+Shift+Escape exec "notify-send 30minthensleep && sleep 1800 && sudo systemctl hibernate"
+bindsym $mod+Escape exec "sudo systemctl suspend"
+bindsym $mod+Shift+Escape exec "notify-send 30minthensleep && sleep 1800 && sudo systemctl suspend"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -179,12 +179,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec feh --bg-scale "/usr/share/wallpapers/Snagged Rosa/contents/images/2560x1600.jpg"
-exec --no-startup-id nm-applet
-
 # bindsym $mod+s+l exec ~/.i3/sleep.sh
-bindsym $mod+F5 exec "sudo ~/bin/myxbacklight.sh -300"
-bindsym $mod+F6 exec "sudo ~/bin/myxbacklight.sh 300"
+bindsym $mod+F5 exec "sudo ~/bin/myxbacklight.sh -600"
+bindsym $mod+F6 exec "sudo ~/bin/myxbacklight.sh 600"
 bindsym $mod+F7 exec "sudo ~/bin/myxbacklight.sh 3000"
 
 for_window [class="^.*"] border pixel 4
@@ -197,22 +194,16 @@ bindsym $mod+F9 exec gnome-screenshot
 bindsym $mod+F8 exec monitor.sh
 
 bindsym $mod+c exec nautilus --no-desktop
-bindsym $mod+g exec firefox -P default-release
+bindsym $mod+g exec firefox
 bindsym $mod+Shift+g exec firefox --private-window
-bindsym $mod+Shift+t exec firefox -P work
 bindsym $mod+s exec subl -n
 bindsym $mod+p exec "~/bin/toggletouchpad.sh"
 
-exec_always compton -f -D2 -i 0.7
-exec_always np-applet
 bindsym $mod+Shift+E exec ~/config/i3/i3-exit
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 for_window [class="Wine" instance="TeamViewer.exe"] floating enable
 for_window [class="Wine" instance="Hearthstone.exe"] floating enable
 for_window [class="Wine" instance="WorldOfTanks.exe"] floating enable
-
-exec dropbox start -i
-exec redshift-gtk -l 45.45:28.05 -t 9700:3600 -g 0.8
 
 # scratchpad for todos.
 for_window [instance="scratchpad"] floating enable
@@ -222,3 +213,7 @@ for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+n scratchpad show; move position center
 bindsym $mod+Shift+n move scratchpad
 exec --no-startup-id urxvt -name scratchpad -e bash -c 'vim /home/gabriel/Dropbox/todo'
+exec --no-startup-id /usr/lib/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-flashback
