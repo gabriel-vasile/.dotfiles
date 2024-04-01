@@ -29,6 +29,7 @@ declare -A configs=(
 	["./vim/.vimrc"]="$HOME/.vimrc"
 	["./vim/foursee.vim"]="$HOME/.vim/colors/foursee.vim"
 	["./vim/plugins.vim"]="$HOME/.vim/plugins.vim"
+	["./zsh/aliases.zsh"]="$HOME/.oh-my-zsh/custom/aliases.zsh"
 	["./i3/config"]="$HOME/.config/i3/config"
 	["./i3/i3-exit"]="$HOME/.config/i3/i3-exit"
 	["./i3/sleep.sh"]="$HOME/.config/i3/sleep.sh"
@@ -86,7 +87,7 @@ cd "/tmp"
 if [ -d "sxlock" ] ; then
     rm -rf sxlock
 fi
-git clone https://github.com/lahwaacz/sxlock.git
+git clone https://github.com/VasileGabriel/sxlock.git
 cd sxlock
 make
 mv -f ./sxlock $HOME/bin
