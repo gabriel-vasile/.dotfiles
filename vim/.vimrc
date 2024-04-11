@@ -12,6 +12,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
