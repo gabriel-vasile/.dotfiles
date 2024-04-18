@@ -33,6 +33,9 @@ let g:ctrlp_use_caching = 0
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
+nnoremap ff <cmd>Telescope find_files<cr>
+nnoremap fg <cmd>Telescope live_grep<cr>
+
 "------------------------------------------------------------------------------
 " ale
 "------------------------------------------------------------------------------
@@ -56,6 +59,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" List code actions available for the current buffer
+nmap <leader>ca  <Plug>(coc-codeaction)
 
 nnoremap <silent> K :call ShowDocumentation()<CR>
 function! ShowDocumentation()

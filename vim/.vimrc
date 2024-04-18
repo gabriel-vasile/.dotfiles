@@ -5,7 +5,9 @@ Plug 'scrooloose/nerdtree',
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'kien/ctrlp.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'flazz/vim-colorschemes'
 Plug 'godlygeek/csapprox'
 Plug 'airblade/vim-gitgutter'
