@@ -1,15 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
-" Plug 'flazz/vim-colorschemes'
 Plug 'ellisonleao/gruvbox.nvim'
-Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-" Plug 'godlygeek/csapprox'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
