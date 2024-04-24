@@ -13,7 +13,8 @@ declare -a packages=(
 	"software-properties-common" "exuberant-ctags"
 	"fonts-inconsolata" "fonts-font-awesome" "git" "gitk"
 	"mysql-server" "mysql-client"
-	"libx11-dev" "libxext-dev" "libxrandr-dev" "libpam-dev")
+	"libx11-dev" "libxext-dev" "libxrandr-dev" "libpam-dev"
+	"fd-find", "xsct")
 
 declare -a config_dirs=(
 	"$HOME/bin"
