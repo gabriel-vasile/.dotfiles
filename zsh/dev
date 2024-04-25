@@ -8,5 +8,5 @@ fi
 
 for i in `seq 1 $noWindows`;
 do
-    urxvt -e bash -c 'vim .' &
+    urxvt -e bash -c 'vim' &
 done
