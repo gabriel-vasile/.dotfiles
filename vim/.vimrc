@@ -5,7 +5,11 @@ Plug 'tpope/vim-sensible'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-Plug 'nvim-telescope/telescope-file-browser.nvim'
+" Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'MunifTanjim/nui.nvim'
+Plug '3rd/image.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -103,3 +107,13 @@ source ~/.vim/plugins.vim
 set background=dark " or light if you want light mode
 colorscheme gruvbox
 set autoread
+
+lua << EOF
+    require 'neo-tree'.setup({
+        default_component_configs = {
+            icon = {
+                enabled = false
+            }
+        }
+    })
+EOF
