@@ -212,7 +212,7 @@ for_window [instance="scratchpad"] move position center
 for_window [instance="scratchpad"] move scratchpad
 bindsym $mod+n scratchpad show; move position center
 bindsym $mod+Shift+n move scratchpad
-exec --no-startup-id urxvt -name scratchpad -e bash -c 'vim /home/gabriel/Dropbox/todo'
+exec --no-startup-id gnome-terminal --name scratchpad -- vim /home/gabriel/Dropbox/todo
 exec --no-startup-id /usr/lib/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
