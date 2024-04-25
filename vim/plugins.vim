@@ -1,6 +1,6 @@
 nnoremap ff <cmd>Telescope find_files<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>o :Neotree toggle left reveal_force_cwd<cr>
+nnoremap <leader>o :Neotree toggle float reveal_force_cwd<cr>
 
 "------------------------------------------------------------------------------
 " ale
