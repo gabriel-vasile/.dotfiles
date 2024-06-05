@@ -28,7 +28,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set digraph
 set shortmess+=A
 set noswapfile
 set nocp
