@@ -20,6 +20,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'TaDaa/vimade'
 
 call plug#end()
 
@@ -58,12 +59,14 @@ map <Leader>w :StripWhitespace<CR>:w<CR>
 imap <Leader>w <ESC>:StripWhitespace<CR>:w<CR>
 vmap <Leader>w <ESC><ESC>:StripWhitespace<CR>:w<CR>
 
+nnoremap K <c-w>l
+nnoremap J <c-w>h
+
 " Don't yank and paste
 xnoremap p pgvy
 
 " Exit insert with jj
 inoremap jj <esc>
-nnoremap JJJJ <nop>
 
 " Preserve selection after indenting
 vnoremap < <gv
