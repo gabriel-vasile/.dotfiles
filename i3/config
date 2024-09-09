@@ -217,3 +217,4 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-flashback
+exec --no-startup-id xinput --set-prop 'Microsoft Microsoft® 2.4GHz Transceiver v8.0 Mouse' 'libinput Scroll Method Enabled' 0 0 1
