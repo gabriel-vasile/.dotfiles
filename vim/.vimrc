@@ -111,11 +111,27 @@ colorscheme gruvbox
 set autoread
 
 lua << EOF
-    require 'neo-tree'.setup({
-        default_component_configs = {
-            icon = {
-                enabled = false
-            }
+require 'neo-tree'.setup({
+    default_component_configs = {
+        icon = {
+            enabled = false
         }
-    })
+    },
+    filesystem = {
+        filtered_items = {
+            hide_dotfiles = false,
+            hide_by_name = {
+                "node_modules",
+            },
+        },
+    },
+})
+
+require 'telescope'.setup({
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules"
+    }
+  }
+})
 EOF

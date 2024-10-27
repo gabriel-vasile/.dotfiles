@@ -8,6 +8,8 @@ call deoplete#custom#option('sources', {
 \ '_': ['ale'],
 \})
 
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -25,6 +27,4 @@ function! ShowDocumentation()
   endif
 endfunction
 
-" Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
